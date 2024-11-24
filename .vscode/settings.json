@@ -15,6 +15,7 @@
     "idf.toolsPath": "/home/flo/.espressif",
     "files.associations": {
         "stdio.h": "c",
-        "cjson.h": "c"
+        "cjson.h": "c",
+        "esp_chip_info.h": "c"
     }
 }
