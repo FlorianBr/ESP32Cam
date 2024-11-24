@@ -38,7 +38,7 @@ esp_err_t WiFi_Init(void);
  *
  * @return esp_netif_t*
  */
-esp_netif_t* WiFi_GetNetIf();
+esp_netif_t *WiFi_GetNetIf();
 
 /**
  * @brief Check if WiFi is connected
@@ -51,4 +51,4 @@ bool WiFi_isConnected();
 }
 #endif
 
-#endif // _WIFI_H_
+#endif   // _WIFI_H_

@@ -16,6 +16,7 @@
     "files.associations": {
         "stdio.h": "c",
         "cjson.h": "c",
-        "esp_chip_info.h": "c"
+        "esp_chip_info.h": "c",
+        "system_error": "c"
     }
 }

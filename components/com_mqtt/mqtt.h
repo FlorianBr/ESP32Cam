@@ -23,15 +23,15 @@ extern "C" {
 
 /* Exported constants --------------------------------------------------------*/
 
-#define MAX_TOPIC_LEN 250   // Max length of full topic
-#define MAX_BASE_LENGTH 128 // Max length base topic
-#define MAX_PAYLOAD 128     // Max size of payload
+#define MAX_TOPIC_LEN   250   // Max length of full topic
+#define MAX_BASE_LENGTH 128   // Max length base topic
+#define MAX_PAYLOAD     128   // Max size of payload
 
 /* Exported types ------------------------------------------------------------*/
 
 typedef struct MQTT_RXMessage {
-  char SubTopic[MAX_TOPIC_LEN - MAX_BASE_LENGTH];
-  char Payload[MAX_PAYLOAD];
+   char SubTopic[MAX_TOPIC_LEN - MAX_BASE_LENGTH];
+   char Payload[MAX_PAYLOAD];
 } MQTT_RXMessage;
 
 /* Exported macro ------------------------------------------------------------*/
@@ -50,9 +50,10 @@ esp_err_t MQTT_Init(void);
  *
  * @param SubTopic The subtopic to send to
  * @param Payload The payload to send
+ * @param PayloadLength Length of the payload or 0
  * @return esp_err_t
  */
-esp_err_t MQTT_Transmit(const char* SubTopic, const char* Payload);
+esp_err_t MQTT_Transmit(const char *SubTopic, const char *Payload, const int PayloadLength);
 
 /**
  * @brief Subscribe to a subtopic
@@ -60,7 +61,7 @@ esp_err_t MQTT_Transmit(const char* SubTopic, const char* Payload);
  * @param SubTopic
  * @return esp_err_t
  */
-esp_err_t MQTT_Subscribe(const char* SubTopic);
+esp_err_t MQTT_Subscribe(const char *SubTopic);
 
 /**
  * @brief Unsubscribe from a topic
@@ -68,7 +69,7 @@ esp_err_t MQTT_Subscribe(const char* SubTopic);
  * @param SubTopic
  * @return esp_err_t
  */
-esp_err_t MQTT_Unsubscribe(const char* SubTopic);
+esp_err_t MQTT_Unsubscribe(const char *SubTopic);
 
 /**
  * @brief Get the handle to the RX queue
@@ -88,4 +89,4 @@ bool MQTT_isConnected();
 }
 #endif
 
-#endif // MQTT_H_
+#endif   // MQTT_H_
